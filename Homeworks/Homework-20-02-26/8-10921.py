@@ -4,10 +4,8 @@ k = 0
 for val in set(permutations('ДЖАВАСКРИПТ')):
     val = ''.join(val)
     s = 0
-    for n in 'АИ':
-        val = val.replace(n, '*')
     for pos, i in enumerate(val, start = 1):
-        if i == '*':
+        if i in 'АИ':
             s += pos
     if s == 11:
         k += 1
