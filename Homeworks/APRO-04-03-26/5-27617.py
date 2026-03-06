@@ -7,5 +7,6 @@ for N in range(1, 1000):
         b = b + f'{(N % 3)*3:b}'
     R = int(b, 2)
     if 120 < R < 140:
-        ans.append([R, N])
-print(ans)
+        ans.append([abs(130 - R), N])
+ans = sorted(ans, key = lambda x: (x[0], -x[1]))
+print(ans[0][1])
